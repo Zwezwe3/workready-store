@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorkReady Store | Laptops, Shoes & Boots</title>
+  <meta name="description" content="Affordable refurbished laptops, sports shoes and Timberland boots in South Africa. Order easily via WhatsApp." />
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; background:#f6f6f6; color:#222}
+    header {background:#000; color:#fff; padding:20px}
+    header h1 {margin:0}
+    .container {max-width:1100px; margin:auto; padding:20px}
+    .hero {display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center}
+    .hero img {width:100%; border-radius:10px}
+    .btn {display:inline-block; padding:14px 20px; background:#25D366; color:#fff; text-decoration:none; border-radius:8px; font-weight:bold}
+    .products {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:40px}
+    .card {background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,.08)}
+    footer {background:#111; color:#ccc; padding:20px; text-align:center; margin-top:40px}
+  </style>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_META_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
+
+  <!-- TikTok Pixel -->
+  <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+      ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],
+      ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+      for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+      ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+      ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
+        ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;
+        ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=d.createElement("script");
+        o.type="text/javascript";o.async=!0;o.src=i+"?sdkid="+e+"&lib="+t;
+        var a=d.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+      ttq.load('YOUR_TIKTOK_PIXEL_ID');
+      ttq.page();
+    }(window, document, 'ttq');
+  </script>
+  <!-- End TikTok Pixel -->
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>WorkReady Store</h1>
+    <p>Quality Tech & Footwear | South Africa</p>
+  </div>
+</header>
+
+<section class="container hero">
+  <div>
+    <h2>Affordable Work‑Ready Laptops & Premium Footwear</h2>
+    <p>Refurbished laptops, sports shoes and Timberland boots. Tested, trusted, and delivered nationwide.</p>
+    <a class="btn" href="https://wa.me/27628952301?text=Hi%20I%20want%20to%20order%20from%20WorkReady%20Store" onclick="trackWhatsApp('General')">Chat on WhatsApp</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Laptops, Shoes and Boots" />
+</section>
+
+<section class="container">
+  <h2>Our Products</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=600&q=80" alt="Refurbished Laptops" style="width:100%; border-radius:8px" />
+      <h3>Refurbished Laptops</h3>
+      <p>Business-grade laptops, tested and ready for work.</p>
+      <a class="btn" href="https://wa.me/27628952301?text=I%20want%20a%20laptop" onclick="trackWhatsApp('Laptop')">Order via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Sports Shoes" style="width:100%; border-radius:8px" />
+      <h3>Sports Shoes</h3>
+      <p>Comfortable and durable sports footwear.</p>
+      <a class="btn" href="https://wa.me/27628952301?text=I%20want%20sports%20shoes" onclick="trackWhatsApp('Shoes')">Order via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?auto=format&fit=crop&w=600&q=80" alt="Timberland Boots" style="width:100%; border-radius:8px" />
+      <h3>Timberland Boots</h3>
+      <p>Original-style boots built for work and style.</p>
+      <a class="btn" href="https://wa.me/27628952301?text=I%20want%20Timberland%20boots" onclick="trackWhatsApp('Boots')">Order via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Why WorkReady?</h2>
+  <ul>
+    <li>✔ Tested & verified products</li>
+    <li>✔ Nationwide delivery</li>
+    <li>✔ Fast WhatsApp support</li>
+    <li>✔ Affordable pricing</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2026 WorkReady Store | WhatsApp Orders Only</p>
+</footer>
+
+<script>
+  function trackWhatsApp(product) {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Contact', {content_name: product, method: 'WhatsApp'});
+    }
+    if (typeof ttq !== 'undefined') {
+      ttq.track('Contact', {content_name: product});
+    }
+  }
+</script>
+</body>
+</html>
