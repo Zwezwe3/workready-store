@@ -6,7 +6,7 @@
   <title>WorkReady Store | Laptops, Shoes & Boots</title>
   <meta name="description" content="Affordable refurbished laptops, sports shoes and Timberland boots in South Africa. Order easily via WhatsApp." />
   <style>
-  body {
+ body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f6f6f6;
@@ -39,67 +39,48 @@
 
   .hero img {
     width: 100%;
-    max-width: 420px;
-    border-radius: 12px;
-    margin: auto;
-    display: block;
+    border-radius: 10px;
   }
 
   .btn {
     display: inline-block;
-    padding: 14px 22px;
+    padding: 14px 20px;
     background: #25D366;
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
-    margin-top: 10px;
   }
 
   /* TRUST STRIP */
-.trust-strip {
-  background: #ffffff;
-  padding: 25px 0;
-  margin-top: 20px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
+  .trust-strip {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-weight: bold;
+    margin: 20px 0;
+  }
 
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  text-align: center;
-  align-items: center;
-}
-
-.trust-item {
-  font-size: 15px;
-  font-weight: 600;
-  color: #333;
-}
-
-  /* MOBILE */  
+  /* MOBILE */
   @media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
 
-  .hero img {
-    margin-top: 20px;
-  }
+    .hero img {
+      margin-top: 20px;
+    }
 
-  /* HIDE RIGHT COLUMN ON MOBILE */
-  .hero-right {
-    display: none;
-  }
+    .hero-right {
+      display: none;
+    }
 
-  .btn {
-    margin-left: auto;
-    margin-right: auto;
+    .btn {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
-}  
 </style>
 
   <!-- Meta Pixel -->
