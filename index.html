@@ -1,130 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
 
 <head>
-<body>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WorkReady Store</title>
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f6f6f6;
-    color: #222;
-  }
+  <!-- STYLES -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f6f6f6;
+      color: #222;
+    }
 
-  header {
-    background: #000;
-    color: #fff;
-    padding: 20px;
-  }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px;
+    }
 
-  header h1 {
-    margin: 0;
-  }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
 
-  .container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-  }
-
-  /* HERO */
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    padding: 50px 0;
-  }
-
-  .hero img {
-    width: 100%;
-    border-radius: 12px;
-  }
-
-  .hero h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-
-  .hero p {
-    font-size: 17px;
-  }
-
-  /* BUTTON */
-  .btn {
-    display: inline-block;
-    padding: 15px 26px;
-    background: linear-gradient(135deg, #25D366, #1ebe57);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
-  }
-
-  /* TRUST STRIP */
-  .trust-strip {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 30px 0;
-    font-weight: bold;
-  }
-
-  .trust-strip span {
-    background: #fff;
-    padding: 10px 16px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.08);
-  }
-
-  /* PRODUCTS */
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-  }
-
-  .card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
-    text-align: center;
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,.15);
-  }
-
-  .card img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
-  }
-
-  /* MOBILE */
-  @media (max-width: 768px) {
     .hero {
-      grid-template-columns: 1fr;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 50px 0;
     }
 
     .hero img {
-      margin-top: 20px;
+      width: 100%;
+      border-radius: 12px;
     }
-  }
 
-  /* STICKY WHATSAPP */
-  @media (max-width: 768px) {
+    .btn {
+      display: inline-block;
+      padding: 15px 26px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding: 25px 0;
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
+
     .sticky-whatsapp {
       position: fixed;
       bottom: 15px;
@@ -132,61 +78,44 @@
       transform: translateX(-50%);
       z-index: 9999;
     }
-  }
-<head>
-  <!-- Meta tags, title, styles -->
+  </style>
 
-  <!-- Meta Pixel -->
+  <!-- META PIXEL -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1794664681252011');
-  fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1794664681252011');
+    fbq('track', 'PageView');
   </script>
 
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1794664681252011&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel -->
-
- <!-- TikTok Pixel -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject = t;
-  var ttq = w[t] = w[t] || [];
-  ttq.methods = ["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
-  ttq.setAndDefer = function(t,e){
-    t[e]=function(){
-      t.push([e].concat(Array.prototype.slice.call(arguments,0)));
-    }
-  };
-  for (var i = 0; i < ttq.methods.length; i++) {
-    ttq.setAndDefer(ttq, ttq.methods[i]);
-  }
-
-  ttq.load = function(e){
-    var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
-    var o = d.createElement("script");
-    o.type = "text/javascript";
-    o.async = true;
-    o.src = i + "?sdkid=" + e + "&lib=" + t;
-    var a = d.getElementsByTagName("script")[0];
-    a.parentNode.insertBefore(o, a);
-  };
-
-  ttq.load('D5G25JBC77U2JQE9TJEG');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- End TikTok Pixel -->
-
+  <!-- TIKTOK PIXEL -->
+  <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject = t;
+      var ttq = w[t] = w[t] || [];
+      ttq.methods = ["page","track"];
+      ttq.setAndDefer = function(t,e){
+        t[e]=function(){t.push([e].concat([].slice.call(arguments)))}
+      };
+      for (var i = 0; i < ttq.methods.length; i++) {
+        ttq.setAndDefer(ttq, ttq.methods[i]);
+      }
+      ttq.load = function(e){
+        var s = d.createElement("script");
+        s.async = true;
+        s.src = "https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=" + e;
+        d.head.appendChild(s);
+      };
+      ttq.load('D5G25JBC77U2JQE9TJEG');
+      ttq.page();
+    }(window, document, 'ttq');
+  </script>
 </head>
 
 <body>
@@ -200,177 +129,29 @@
 
 <section class="container hero">
   <div>
-  <h2>Work-Ready Tools for Real Life</h2>
-  <p>
-    WorkReady Store helps you get equipped with affordable, reliable laptops and
-    quality footwear so you can work, study, and move forward with confidence.
-  </p>
-  <p>
-    Trusted by customers across South Africa, we make ordering simple through
-    fast WhatsApp support and nationwide delivery.
-  </p>
-  <a class="btn" href="https://wa.me/27628952301?text=Hi%20I%20want%20to%20order%20from%20WorkReady%20Store"
-     onclick="trackWhatsApp('General')">
-     Chat on WhatsApp
-  </a>
-</div>
-    <h2>Affordable Work‑Ready Laptops & Premium Footwear</h2>
-    <p>Refurbished laptops, sports shoes and Timberland boots. Tested, trusted, and delivered nationwide.</p>
-    <a class="btn" href="https://wa.me/27628952301?text=Hi%20I%20want%20to%20order%20from%20WorkReady%20Store" onclick="trackWhatsApp('General')">Chat on WhatsApp</a>
+    <h2>Work-Ready Tools for Real Life</h2>
+    <p>Affordable laptops & footwear. Order easily via WhatsApp.</p>
+    <a class="btn" href="https://wa.me/27628952301">Chat on WhatsApp</a>
   </div>
-  <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Laptops, Shoes and Boots" />
-  </section> <!-- END HERO -->
-
-<section class="trust-strip">
-  <span>🚚 Nationwide Delivery</span>
-  <span>✔️ Quality Checked</span>
-  <span>💬 WhatsApp Support</span>
-  <span>💰 Affordable Prices</span>
+  <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="">
 </section>
 
 <section class="container">
   <h2>Our Products</h2>
-
   <div class="products">
-
-    <!-- LAPTOPS -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=600&q=80"
-           alt="Refurbished Laptops">
-      <h3>Refurbished Laptops</h3>
-      <p>
-        Reliable business-grade laptops ideal for work, school, and everyday use.
-        Fully tested and ready to perform.
-      </p>
-      <a class="btn"
-         href="https://wa.me/27628952301?text=I%20want%20a%20laptop"
-         onclick="trackWhatsApp('Laptop')">
-         Order via WhatsApp
-      </a>
-    </div>
-
-    <!-- SPORTS SHOES -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
-           alt="Sports Shoes">
-      <h3>Sports Shoes</h3>
-      <p>
-        Comfortable, durable sports shoes suitable for daily wear.
-      </p>
-      <a class="btn"
-         href="https://wa.me/27628952301?text=I%20want%20sports%20shoes"
-         onclick="trackWhatsApp('Shoes')">
-         Order via WhatsApp
-      </a>
-    </div>
-
-    <!-- TIMBERLAND BOOTS -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?auto=format&fit=crop&w=800&q=80"
-           alt="Timberland Boots">
-      <h3>Timberland-Style Boots</h3>
-      <p>
-        Strong, stylish boots built for work and everyday wear.
-        Designed for durability and comfort.
-      </p>
-      <a class="btn"
-         href="https://wa.me/27628952301?text=I%20want%20Timberland%20boots"
-         onclick="trackWhatsApp('Boots')">
-         Order via WhatsApp
-      </a>
-    </div>
-
-<section class="container">
-  <h2>About WorkReady Store</h2>
-  <p>
-    WorkReady Store helps South Africans access reliable work tools and quality
-    footwear at affordable prices. We make ordering simple through WhatsApp
-    support and nationwide delivery.
-  </p>
-
-  <h3>Our Mission</h3>
-  <p>
-    To make work-ready laptops and essential footwear accessible, stress-free,
-    and affordable for everyone.
-  </p>
-
-  <h3>Our Vision</h3>
-  <p>
-    To become a trusted online South African brand for work-ready technology
-    and lifestyle products.
-  </p>
-</section>
-
-<section class="container">
-  <h2>Why Choose WorkReady Store?</h2>
-  <ul>
-    <li>✔ Quality-checked products only</li>
-    <li>✔ Simple ordering via WhatsApp</li>
-    <li>✔ Fast responses and friendly support</li>
-    <li>✔ Nationwide delivery</li>
-    <li>✔ Affordable options for every budget</li>
-  </ul>
-</section>
-<section class="container">
-  <h2>Delivery & Payment</h2>
-  <div class="products">
-    <div class="card">
-      <h3>🚚 Nationwide Delivery</h3>
-      <p>
-        We deliver across South Africa. Orders are processed quickly and shipped
-        using trusted courier partners.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>💬 WhatsApp Ordering</h3>
-      <p>
-        All orders are handled directly via WhatsApp. This allows us to confirm
-        availability, sizes, models, and delivery details before payment.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>🔐 Secure & Transparent Payments</h3>
-      <p>
-        Payment options are shared after order confirmation. We believe in clear
-        communication, no hidden costs, and customer confidence.
-      </p>
-    </div>
+    <div class="card"><h3>Laptops</h3></div>
+    <div class="card"><h3>Shoes</h3></div>
+    <div class="card"><h3>Boots</h3></div>
   </div>
 </section>
-<style>
-/* FOOTER FIX */
-footer {
-  width: 100%;
-  clear: both;
-  margin-top: 80px;
-  padding: 25px 0;
-  background: #000;
-  color: #fff;
-  text-align: center;
-  grid-column: 1 / -1;
-}
-  <div class="sticky-whatsapp">
-    <a href="https://wa.me/27628952301?text=Hi%20I%20want%20to%20order%20from%20WorkReady%20Store">
-      💬 Chat on WhatsApp
-    </a>
-  </div>
 
-  <footer>
-    <p>© 2026 WorkReady Store | WhatsApp Orders Only</p>
-  </footer>
+<div class="sticky-whatsapp">
+  <a class="btn" href="https://wa.me/27628952301">💬 WhatsApp</a>
+</div>
 
-  <script>
-    function trackWhatsApp(product) {
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Contact', {content_name: product, method: 'WhatsApp'});
-      }
-      if (typeof ttq !== 'undefined') {
-        ttq.track('Contact', {content_name: product});
-      }
-    }
-  </script>
+<footer>
+  <p>© 2026 WorkReady Store | WhatsApp Orders Only</p>
+</footer>
 
 </body>
 </html>
