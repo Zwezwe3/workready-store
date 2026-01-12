@@ -1,157 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WorkReady Store | WhatsApp Orders Only</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WorkReady Store – No Stress. No Hidden Costs.</title>
 
-  <!-- META PIXEL -->
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1794664681252011');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1794664681252011&ev=PageView&noscript=1"/></noscript>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
 
-  <!-- TIKTOK PIXEL -->
-  <script>
-  !function (w, d, t) {
-    w.TiktokAnalyticsObject = t;
-    var ttq = w[t] = w[t] || [];
-    ttq.methods = ["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
-    ttq.setAndDefer = function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)));}};
-    for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
-    ttq.load = function(e){
-      var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
-      var o = d.createElement("script");
-      o.type = "text/javascript";
-      o.async = true;
-      o.src = i + "?sdkid=" + e + "&lib=" + t;
-      var a = d.getElementsByTagName("script")[0];
-      a.parentNode.insertBefore(o, a);
-    };
-    ttq.load('D5G25JBC77U2JQE9TJEG');
-    ttq.page();
-  }(window, document, 'ttq');
-  </script>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f6f6;
+  color: #222;
+}
 
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#f6f6f6; color:#222; }
-    header { background:#000; color:#fff; padding:25px; }
-    .container { max-width:1100px; margin:auto; padding:20px; }
-    h1,h2,h3 { margin-top:0; }
+/* HEADER */
+header {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
 
-    .hero { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
-    .hero img { width:100%; border-radius:14px; }
+/* TRUST BADGE */
+.trust {
+  background: #111;
+  color: #0f0;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+}
 
-    .btn { display:inline-block; padding:14px 26px; background:#25D366; color:#fff; text-decoration:none; border-radius:30px; font-weight:bold; }
+/* SECTIONS */
+section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    .trust-strip { display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin:30px 0; }
-    .trust-strip span { background:#fff; padding:10px 16px; border-radius:20px; box-shadow:0 4px 10px rgba(0,0,0,.1); }
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
-    .card { background:#fff; padding:20px; border-radius:14px; box-shadow:0 6px 18px rgba(0,0,0,.08); }
-    .card h3 { margin-bottom:10px; }
+/* GALLERY */
+.gallery {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
 
-    /* IMAGE GALLERY */
-    .gallery { display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; }
-    .gallery img { flex:0 0 100%; border-radius:12px; scroll-snap-align:start; }
-    .gallery::-webkit-scrollbar { display:none; }
+.gallery img {
+  flex: 0 0 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  scroll-snap-align: start;
+}
 
-    footer { background:#000; color:#fff; text-align:center; padding:25px; margin-top:80px; }
+.gallery::-webkit-scrollbar {
+  display: none;
+}
 
-    .sticky-whatsapp { position:fixed; bottom:20px; right:20px; z-index:999; }
-    .sticky-whatsapp a { background:#25D366; color:#fff; padding:14px 18px; border-radius:50px; text-decoration:none; font-weight:bold; }
+/* PRODUCTS */
+.product {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
 
-    @media(max-width:768px){ .hero{grid-template-columns:1fr;} }
-  </style>
+button {
+  background: #25D366;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* PAYMENT */
+.payment {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 40px;
+}
+
+/* WHATSAPP FLOAT */
+.sticky-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 14px 18px;
+  border-radius: 30px;
+}
+
+.sticky-whatsapp a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <h1>WorkReady Store</h1>
-    <p>Work‑Ready Tech & Footwear | South Africa</p>
-  </div>
+  <h1>WorkReady Store</h1>
+  <p>Quality tech & footwear — WhatsApp orders only</p>
 </header>
 
-<section class="container hero">
-  <div>
-    <h2>No stress. No hidden costs.</h2>
-    <p>Affordable laptops and quality footwear delivered nationwide. Simple WhatsApp ordering, real support, real products.</p>
-    <a class="btn" href="https://wa.me/27628952301" onclick="trackWhatsApp('General')">Chat on WhatsApp</a>
+<div class="trust">✔ No stress. No hidden costs.</div>
+
+<!-- PRODUCTS -->
+<section>
+  <h2>Featured Products</h2>
+
+  <div class="product">
+    <h3>Refurbished Business Laptop</h3>
+    <div class="gallery">
+      <img src="assets/images/products/laptop1.jpg" alt="Laptop view 1">
+      <img src="assets/images/products/laptop2.jpg" alt="Laptop view 2">
+    </div>
+    <p>Reliable refurbished laptop for work, study and daily use. Fully tested and cleaned.</p>
+    <button onclick="trackWhatsApp('Laptop')">Order on WhatsApp</button>
   </div>
-  <img src="images/laptop-hero.jpg" alt="WorkReady Products" />
-</section>
 
-<section class="trust-strip">
-  <span>🚚 Nationwide Delivery</span>
-  <span>✔ Quality Checked</span>
-  <span>💬 WhatsApp Support</span>
-  <span>😌 No Stress. No Hidden Costs.</span>
-</section>
-
-<section class="container">
-  <h2>Our Products</h2>
-
-  <div class="products">
-
-    <div class="card">
-      <h3>HP Pavilion Gaming Laptop</h3>
-      <div class="gallery">
-        <img src="images/laptop1.jpg" alt="HP Pavilion Gaming Laptop" />
-        <img src="images/laptop2.jpg" alt="HP Pavilion Gaming Laptop" />
-      </div>
-      <p>Intel Core i7 powered gaming laptop with NVIDIA graphics. Ideal for work, gaming, and creative use.</p>
-      <a class="btn" href="https://wa.me/27628952301?text=I%20want%20HP%20Gaming%20Laptop" onclick="trackWhatsApp('Laptop')">Order via WhatsApp</a>
+  <div class="product">
+    <h3>Comfort Sports Shoes</h3>
+    <div class="gallery">
+      <img src="assets/images/products/shoes1.jpg" alt="Sports shoe">
+      <img src="assets/images/products/shoes2.jpg" alt="Sports shoe side">
     </div>
-
-    <div class="card">
-      <h3>Sports Shoes</h3>
-      <div class="gallery">
-        <img src="images/shoes1.jpg" alt="Sports Shoes" />
-        <img src="images/shoes2.jpg" alt="Sports Shoes" />
-      </div>
-      <p>Comfortable everyday sports shoes. Durable, stylish and affordable.</p>
-      <a class="btn" href="https://wa.me/27628952301?text=I%20want%20Sports%20Shoes" onclick="trackWhatsApp('Shoes')">Order via WhatsApp</a>
-    </div>
-
-    <div class="card">
-      <h3>Timberland‑Style Boots</h3>
-      <div class="gallery">
-        <img src="images/boots1.jpg" alt="Timberland Boots" />
-      </div>
-      <p>Strong boots built for work and everyday wear.</p>
-      <a class="btn" href="https://wa.me/27628952301?text=I%20want%20Boots" onclick="trackWhatsApp('Boots')">Order via WhatsApp</a>
-    </div>
-
+    <p>Durable everyday shoes suitable for work and casual wear.</p>
+    <button onclick="trackWhatsApp('Sports Shoes')">Order on WhatsApp</button>
   </div>
+
+  <div class="product">
+    <h3>Work Boots</h3>
+    <div class="gallery">
+      <img src="assets/images/products/boots1.jpg" alt="Work boots">
+    </div>
+    <p>Strong boots designed for long hours and tough environments.</p>
+    <button onclick="trackWhatsApp('Work Boots')">Order on WhatsApp</button>
+  </div>
+
 </section>
 
-<section class="container">
-  <h2>About WorkReady Store</h2>
-  <p>We help South Africans access reliable work tools and footwear without stress or hidden costs.</p>
-
-  <h3>Our Mission</h3>
-  <p>To make work‑ready products accessible, affordable and easy to order.</p>
-
-  <h3>Our Vision</h3>
-  <p>To become a trusted South African brand for practical technology and lifestyle essentials.</p>
+<!-- ABOUT -->
+<section>
+  <h2>About Us</h2>
+  <p>WorkReady Store supplies affordable, practical products for everyday working people. We focus on value, honesty, and simplicity.</p>
 </section>
 
-<section class="container">
-  <h2>Delivery & Payment</h2>
+<!-- VISION -->
+<section>
+  <h2>Our Vision</h2>
+  <p>To make quality work essentials accessible without stress or hidden costs.</p>
+</section>
+
+<!-- MISSION -->
+<section>
+  <h2>Our Mission</h2>
+  <p>Provide reliable products, transparent pricing, and direct WhatsApp ordering.</p>
+</section>
+
+<!-- PAYMENT -->
+<section class="payment">
+  <h2>Payment Options</h2>
   <ul>
-    <li>Nationwide courier delivery</li>
-    <li>Orders confirmed via WhatsApp</li>
-    <li>Clear pricing, no hidden fees</li>
+    <li>Cash on delivery (selected areas)</li>
+    <li>Instant EFT</li>
+    <li>Bank deposit</li>
   </ul>
 </section>
 
@@ -160,13 +204,14 @@
 </footer>
 
 <div class="sticky-whatsapp">
-  <a href="https://wa.me/27628952301">💬 Chat on WhatsApp</a>
+  <a href="https://wa.me/27628952301?text=Hi%20I%20want%20to%20order%20from%20WorkReady%20Store">💬 WhatsApp</a>
 </div>
 
 <script>
 function trackWhatsApp(product) {
-  if (typeof fbq !== 'undefined') fbq('track', 'Contact', {content_name: product});
-  if (typeof ttq !== 'undefined') ttq.track('Contact', {content_name: product});
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Contact', {content_name: product, method: 'WhatsApp'});
+  }
 }
 </script>
 
