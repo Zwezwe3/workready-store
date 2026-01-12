@@ -131,6 +131,27 @@ footer {
     text-align: center;
   }
 }
+  /* PRODUCT IMAGE GALLERY (GITHUB SAFE) */
+.gallery {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery img {
+  flex: 0 0 85%;
+  max-width: 85%;
+  border-radius: 12px;
+  scroll-snap-align: start;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Hide scrollbar */
+.gallery::-webkit-scrollbar {
+  display: none;
+}
 </style>
 
 <!-- ================= META PIXEL ================= -->
@@ -203,9 +224,10 @@ src="https://www.facebook.com/tr?id=1794664681252011&ev=PageView&noscript=1"/>
 <section class="container">
   <h2>Product Gallery</h2>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04">
-    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
-    <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6">
+  <img src="images/laptop1.jpg" alt="Refurbished Laptop">
+  <img src="images/laptop2.jpg" alt="Laptop Keyboard">
+  <img src="images/laptop3.jpg" alt="Laptop Side View">
+</div>
   </div>
 </section>
 
