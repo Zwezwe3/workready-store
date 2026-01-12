@@ -124,6 +124,26 @@ footer {
   text-decoration: none;
   font-weight: bold;
 }
+  /* IMAGE GALLERY */
+.gallery {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery img {
+  flex: 0 0 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  scroll-snap-align: start;
+}
+
+/* Hide scrollbar */
+.gallery::-webkit-scrollbar {
+  display: none;
+}
 </style>
 </head>
 
@@ -143,8 +163,12 @@ footer {
   <div class="product">
     <h3>Refurbished Business Laptop</h3>
     <div class="gallery">
-      <img src="assets/images/products/laptop1.jpg" alt="Laptop view 1">
-      <img src="assets/images/products/laptop2.jpg" alt="Laptop view 2">
+     <div class="gallery">
+  <img src="assets/images/products/laptop1.jpg" alt="Refurbished Laptop Front">
+  <img src="assets/images/products/laptop2.jpg" alt="Refurbished Laptop Side">
+  <img src="assets/images/products/laptop3.jpg" alt="Refurbished Laptop Keyboard">
+  <img src="assets/images/products/laptop4.jpg" alt="Refurbished Laptop Open">
+</div>
     </div>
     <p>Reliable refurbished laptop for work, study and daily use. Fully tested and cleaned.</p>
     <button onclick="trackWhatsApp('Laptop')">Order on WhatsApp</button>
@@ -152,19 +176,19 @@ footer {
 
   <div class="product">
     <h3>Comfort Sports Shoes</h3>
-    <div class="gallery">
-      <img src="assets/images/products/shoes1.jpg" alt="Sports shoe">
-      <img src="assets/images/products/shoes2.jpg" alt="Sports shoe side">
-    </div>
+   <div class="gallery">
+  <img src="assets/images/products/shoes1.jpg" alt="Sports Shoes Pair">
+  <img src="assets/images/products/shoes2.jpg" alt="Sports Shoes Side View">
+  <img src="assets/images/products/shoes3.jpg" alt="Sports Shoes Sole">
+</div>
     <p>Durable everyday shoes suitable for work and casual wear.</p>
     <button onclick="trackWhatsApp('Sports Shoes')">Order on WhatsApp</button>
   </div>
 
-  <div class="product">
-    <h3>Work Boots</h3>
-    <div class="gallery">
-      <img src="assets/images/products/boots1.jpg" alt="Work boots">
-    </div>
+  <div class="gallery">
+  <img src="assets/images/products/boots1.jpg" alt="Timberland Style Boots">
+  <img src="assets/images/products/boots2.jpg" alt="Boots Side View">
+</div>
     <p>Strong boots designed for long hours and tough environments.</p>
     <button onclick="trackWhatsApp('Work Boots')">Order on WhatsApp</button>
   </div>
