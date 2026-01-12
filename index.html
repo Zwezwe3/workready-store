@@ -72,6 +72,53 @@ h2 {
   object-fit: cover;
   border-radius: 6px;
 }
+  .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+  #lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+  /* Product card hover */
+.product-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+/* Image hover */
+.gallery img {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 /* ================= PRODUCT GRID ================= */
 
 .product-card {
@@ -101,6 +148,13 @@ h2 {
   /* Bigger gallery for laptops */
 .product-card:first-of-type .gallery img {
   height: 160px;
+}
+  .btn {
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 .btn {
   display: inline-block;
@@ -260,7 +314,24 @@ footer {
 <footer>
   © 2026 WorkReady Store | WhatsApp Orders Only | 076 289 52301
 </footer>
+<div id="lightbox">
+  <img id="lightbox-img">
+</div>
+ <script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
 
+  document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+</script> 
 </body>
 </html>
 
