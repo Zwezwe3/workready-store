@@ -1,152 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorkReady Store – No Stress. No Hidden Costs.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorkReady Store</title>
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'YOUR_PIXEL_ID');
-fbq('track', 'PageView');
-</script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f6f6;
+      color: #222;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f6f6f6;
-  color: #222;
-}
+    header {
+      background: #000;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
 
-/* HEADER */
-header {
-  background: #000;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
 
-/* TRUST BADGE */
-.trust {
-  background: #111;
-  color: #0f0;
-  text-align: center;
-  padding: 12px;
-  font-weight: bold;
-}
+    header p {
+      margin-top: 8px;
+      opacity: 0.9;
+    }
 
-/* SECTIONS */
-section {
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
+    .trust-badge {
+      background: #111;
+      color: #00c853;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
 
-/* GALLERY */
-.gallery {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.gallery img {
-  flex: 0 0 100%;
-  max-width: 100%;
-  border-radius: 12px;
-  scroll-snap-align: start;
-}
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
 
-.gallery::-webkit-scrollbar {
-  display: none;
-}
+    .product-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
 
-/* PRODUCTS */
-.product {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-}
+    .product-card h3 {
+      margin-top: 0;
+    }
 
-button {
-  background: #25D366;
-  color: #fff;
-  border: none;
-  padding: 12px 18px;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-}
+    /* IMAGE GALLERY */
+    .gallery {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 15px;
+    }
 
-/* PAYMENT */
-.payment {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-}
+    .gallery img {
+      flex: 0 0 100%;
+      max-width: 100%;
+      border-radius: 12px;
+      scroll-snap-align: start;
+    }
 
-/* FOOTER */
-footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 25px 0;
-  margin-top: 40px;
-}
+    .gallery::-webkit-scrollbar {
+      display: none;
+    }
 
-/* WHATSAPP FLOAT */
-.sticky-whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 14px 18px;
-  border-radius: 30px;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 14px 24px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
 
-.sticky-whatsapp a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-  /* IMAGE GALLERY */
-.gallery {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
+    section p, ul {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
 
-.gallery img {
-  flex: 0 0 100%;
-  max-width: 100%;
-  border-radius: 12px;
-  scroll-snap-align: start;
-}
+    ul {
+      padding-left: 20px;
+    }
 
-/* Hide scrollbar */
-.gallery::-webkit-scrollbar {
-  display: none;
-}
-</style>
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+      margin-top: 60px;
+    }
+
+    /* STICKY WHATSAPP */
+    .sticky-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .sticky-whatsapp a {
+      background: #25D366;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 6px 18px rgba(0,0,0,.25);
+    }
+  </style>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1794664681252011');
+    fbq('track', 'PageView');
+  </script>
+
 </head>
-
 <body>
 
 <header>
@@ -154,67 +158,91 @@ footer {
   <p>Quality tech & footwear — WhatsApp orders only</p>
 </header>
 
-<div class="trust">✔ No stress. No hidden costs.</div>
+<div class="trust-badge">
+  ✔ No stress. No hidden costs.
+</div>
 
-<!-- PRODUCTS -->
-<section>
+<section class="container">
   <h2>Featured Products</h2>
 
-  <div class="product">
-    <h3>Refurbished Business Laptop</h3>
-    <div class="gallery">
-     <div class="gallery">
-  <img src="assets/images/products/laptop1.jpg" alt="Refurbished Laptop Front">
-  <img src="assets/images/products/laptop2.jpg" alt="Refurbished Laptop Side">
-  <img src="assets/images/products/laptop3.jpg" alt="Refurbished Laptop Keyboard">
-  <img src="assets/images/products/laptop4.jpg" alt="Refurbished Laptop Open">
-</div>
+  <div class="products">
+
+    <!-- LAPTOP -->
+    <div class="product-card">
+      <h3>Refurbished Business Laptop</h3>
+
+      <div class="gallery">
+        <img src="/assets/images/products/laptop1.jpg" alt="Laptop image 1">
+        <img src="/assets/images/products/laptop2.jpg" alt="Laptop image 2">
+        <img src="/assets/images/products/laptop3.jpg" alt="Laptop image 3">
+      </div>
+
+      <p>
+        Reliable refurbished laptop for work, study, and everyday use.
+        Fully tested, cleaned, and ready to perform.
+      </p>
+
+      <a class="btn" href="https://wa.me/27628952301">Order on WhatsApp</a>
     </div>
-    <p>Reliable refurbished laptop for work, study and daily use. Fully tested and cleaned.</p>
-    <button onclick="trackWhatsApp('Laptop')">Order on WhatsApp</button>
-  </div>
 
-  <div class="product">
-    <h3>Comfort Sports Shoes</h3>
-   <div class="gallery">
-  <img src="assets/images/products/shoes1.jpg" alt="Sports Shoes Pair">
-  <img src="assets/images/products/shoes2.jpg" alt="Sports Shoes Side View">
-  <img src="assets/images/products/shoes3.jpg" alt="Sports Shoes Sole">
-</div>
-    <p>Durable everyday shoes suitable for work and casual wear.</p>
-    <button onclick="trackWhatsApp('Sports Shoes')">Order on WhatsApp</button>
-  </div>
+    <!-- SHOES -->
+    <div class="product-card">
+      <h3>Comfort Sports Shoes</h3>
 
-  <div class="gallery">
-  <img src="assets/images/products/boots1.jpg" alt="Timberland Style Boots">
-  <img src="assets/images/products/boots2.jpg" alt="Boots Side View">
-</div>
-    <p>Strong boots designed for long hours and tough environments.</p>
-    <button onclick="trackWhatsApp('Work Boots')">Order on WhatsApp</button>
-  </div>
+      <div class="gallery">
+        <img src="/assets/images/products/shoes1.jpg" alt="Shoes image 1">
+        <img src="/assets/images/products/shoes2.jpg" alt="Shoes image 2">
+      </div>
 
+      <p>
+        Durable, comfortable sports shoes suitable for everyday wear.
+      </p>
+
+      <a class="btn" href="https://wa.me/27628952301">Order on WhatsApp</a>
+    </div>
+
+    <!-- BOOTS -->
+    <div class="product-card">
+      <h3>Timberland-Style Boots</h3>
+
+      <div class="gallery">
+        <img src="/assets/images/products/boots1.jpg" alt="Boots image 1">
+        <img src="/assets/images/products/boots2.jpg" alt="Boots image 2">
+      </div>
+
+      <p>
+        Strong, stylish boots designed for long hours and tough conditions.
+      </p>
+
+      <a class="btn" href="https://wa.me/27628952301">Order on WhatsApp</a>
+    </div>
+
+  </div>
 </section>
 
-<!-- ABOUT -->
-<section>
+<section class="container">
   <h2>About Us</h2>
-  <p>WorkReady Store supplies affordable, practical products for everyday working people. We focus on value, honesty, and simplicity.</p>
+  <p>
+    WorkReady Store supplies affordable, practical products for everyday working
+    people across South Africa. Simple ordering, honest pricing, and reliable support.
+  </p>
 </section>
 
-<!-- VISION -->
-<section>
+<section class="container">
   <h2>Our Vision</h2>
-  <p>To make quality work essentials accessible without stress or hidden costs.</p>
+  <p>
+    To make quality work essentials accessible without stress or hidden costs.
+  </p>
 </section>
 
-<!-- MISSION -->
-<section>
+<section class="container">
   <h2>Our Mission</h2>
-  <p>Provide reliable products, transparent pricing, and direct WhatsApp ordering.</p>
+  <p>
+    Provide reliable products, transparent pricing, and direct WhatsApp ordering.
+  </p>
 </section>
 
-<!-- PAYMENT -->
-<section class="payment">
+<section class="container">
   <h2>Payment Options</h2>
   <ul>
     <li>Cash on delivery (selected areas)</li>
@@ -223,21 +251,13 @@ footer {
   </ul>
 </section>
 
+<div class="sticky-whatsapp">
+  <a href="https://wa.me/27628952301">💬 WhatsApp</a>
+</div>
+
 <footer>
   <p>© 2026 WorkReady Store | WhatsApp Orders Only</p>
 </footer>
-
-<div class="sticky-whatsapp">
-  <a href="https://wa.me/27628952301?text=Hi%20I%20want%20to%20order%20from%20WorkReady%20Store">💬 WhatsApp</a>
-</div>
-
-<script>
-function trackWhatsApp(product) {
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Contact', {content_name: product, method: 'WhatsApp'});
-  }
-}
-</script>
 
 </body>
 </html>
