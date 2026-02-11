@@ -1,20 +1,184 @@
-<!-- Laptops Section -->
-<section id="laptops-section" class="info-section">
-  <h2>Laptops</h2>
-  
-  <p><strong>Shop with the Best</strong><br>
-  Shop the world's best brands of Business and Home Laptops at the cheapest prices and find your perfect match from the biggest brands like HP, Dell, Lenovo, Acer, ASUS, Apple, and many more. We offer hassle-free checkout and delivery to all major cities within South Africa. Stay up to date with the latest notebook specials for Home and Business.</p>
-  
-  <p><strong>Notebook Accessories</strong><br>
-  We offer accessories for all types of laptops and notebooks including chargers, cables, cable locks, docking stations, batteries, monitors, and many more at affordable prices.</p>
-  
-  <p><strong>Countrywide Delivery</strong><br>
-  We offer hassle-free shipping to any physical address within South Africa free of charge for orders over R1000.</p>
-  
-  <p>Shop with PC Shopper today and find your perfect Home or Business Laptop.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr Dee's Collection</title>
+<style>
+/* Body and global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f6f6;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Main navigation */
+nav {
+  background: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+/* Section styling */
+.info-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.info-section h2 {
+  color: #007bff;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.info-section p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Products section */
+.products-nav {
+  display: flex;
+  justify-content: center;
+  background: #e6f0ff;
+  padding: 10px 0;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.products-nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #007bff;
+  transition: color 0.2s;
+}
+
+.products-nav a:hover {
+  color: #ff9800;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+}
+
+/* Product cards */
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product {
+  text-align: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.8s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.product.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.product p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.price {
+  color: #007bff;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<!-- Main Navigation -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#iphones">iPhones</a>
+  <a href="#sports">Sports Shoes</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="info-section">
+  <h2>Welcome to Mr Dee's Collection</h2>
+  <p>Your destination for quality laptops, Apple iPhones, and branded sports shoes. We connect you with trusted suppliers and deliver directly to your door anywhere in South Africa.</p>
 </section>
 
-<!-- Laptops product cards -->
+<!-- Products Section -->
+<section id="products">
+  <nav class="products-nav">
+    <a href="#laptops-section">Laptops</a>
+    <a href="#iphones-section">iPhones</a>
+    <a href="#sports-section">Sports Shoes</a>
+  </nav>
+</section>
+
+<!-- Laptops -->
+<section id="laptops-section" class="info-section">
+  <h2>Laptops</h2>
+  <p><strong>Shop with the Best</strong><br>
+  Find the world's top brands including HP, Dell, Lenovo, Acer, ASUS, Apple, and more. Perfect for home, business, or study. Hassle-free checkout and delivery to all major South African cities.</p>
+
+  <p><strong>Accessories</strong><br>
+  Chargers, cables, docking stations, batteries, monitors, and more at affordable prices.</p>
+</section>
+
 <div id="laptops" class="products-grid">
   <a href="https://wa.me/27628952301?text=Hello%2C%20I%20want%20to%20order%20Laptop%203" target="_blank" class="product-link">
     <div class="product">
@@ -30,3 +194,87 @@
     </div>
   </a>
 </div>
+
+<!-- iPhones -->
+<section id="iphones-section" class="info-section">
+  <h2>iPhones</h2>
+  <p><strong>Latest iPhones</strong><br>
+  Explore iPhone 16 Pro, iPhone 14 Pro Max, and other top Apple models with warranty from trusted suppliers.</p>
+
+  <p><strong>Accessories</strong><br>
+  Cases, chargers, screen protectors, and more at affordable prices.</p>
+</section>
+
+<div id="iphones" class="products-grid">
+  <a href="https://wa.me/27628952301?text=Hello%2C%20I%20want%20to%20order%20iPhone%201" target="_blank" class="product-link">
+    <div class="product">
+      <img src="https://fones.co.za/wp-content/uploads/2025/03/iphone_14_pro_max_deep_purple-6_1.jpg" alt="iPhone 14 Pro Max">
+      <p><strong>iPhone 1</strong><br>iPhone 14 Pro Max<br><span class="price">R22,999</span></p>
+    </div>
+  </a>
+
+  <a href="https://wa.me/27628952301?text=Hello%2C%20I%20want%20to%20order%20iPhone%202" target="_blank" class="product-link">
+    <div class="product">
+      <img src="https://fones.co.za/wp-content/uploads/2025/11/Apple-iPhone-16-Pro-Natural-Titanium-2.webp" alt="iPhone 16 Pro">
+      <p><strong>iPhone 2</strong><br>iPhone 16 Pro<br><span class="price">R34,499</span></p>
+    </div>
+  </a>
+</div>
+
+<!-- Sports Shoes -->
+<section id="sports-section" class="info-section">
+  <h2>Sports Shoes</h2>
+  <p><strong>Top Branded Shoes</strong><br>
+  Nike, Adidas, Timberland and more. Perfect for running, gym, or casual wear. Comfort and style guaranteed.</p>
+
+  <p><strong>Accessories</strong><br>
+  Insoles, shoelaces, and supports to keep your shoes performing at their best.</p>
+</section>
+
+<div id="sports" class="products-grid">
+  <a href="https://wa.me/27628952301?text=Hello%2C%20I%20want%20to%20order%20Sports%20Shoe" target="_blank" class="product-link">
+    <div class="product">
+      <img src="https://images.pexels.com/photos/6481918/pexels-photo-6481918.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="Nike Sports Shoe">
+      <p><strong>Sports Shoe</strong><br>Nike<br><span class="price">R1,999</span></p>
+    </div>
+  </a>
+
+  <a href="https://wa.me/27628952301?text=Hello%2C%20I%20want%20to%20order%20Boots" target="_blank" class="product-link">
+    <div class="product">
+      <img src="https://assets.timberland.com/images/t_img/f_auto,h_340,e_sharpen:60,w_340/dpr_2.0/v1719373599/TB1A5RJD231-ALT4/Womens-Stone-Street-6Inch-Waterproof-Platform-Boot.png" alt="Timberland Boots">
+      <p><strong>Boots</strong><br>Timberland<br><span class="price">R2,999</span></p>
+    </div>
+  </a>
+</div>
+
+<!-- About Section -->
+<section id="about" class="info-section">
+  <h2>About</h2>
+  <p>We source products from trusted local suppliers to provide quality items at competitive prices. Simple WhatsApp ordering and direct-to-door delivery across South Africa.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="info-section">
+  <h2>Contact</h2>
+  <p>Order or inquire directly via WhatsApp: <a href="https://wa.me/27628952301" target="_blank">+27 62 895 2301</a></p>
+</section>
+
+<script>
+// Fade-in on scroll for info and product cards
+function onScrollFadeIn() {
+  const elements = document.querySelectorAll('.info-section, .product');
+  const windowBottom = window.innerHeight + window.scrollY;
+
+  elements.forEach(el => {
+    if (el.offsetTop + 50 < windowBottom) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', onScrollFadeIn);
+window.addEventListener('load', onScrollFadeIn);
+</script>
+
+</body>
+</html>
