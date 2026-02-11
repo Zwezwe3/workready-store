@@ -1,6 +1,7 @@
-// Lightbox for product images
+// Select all product images
 const productImages = document.querySelectorAll('.product img');
 
+// Create lightbox
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
 document.body.appendChild(lightbox);
@@ -23,10 +24,19 @@ img.style.maxWidth = '90%';
 img.style.maxHeight = '80%';
 lightbox.appendChild(img);
 
+// Open lightbox
 productImages.forEach(image => {
   image.addEventListener('click', () => {
     img.src = image.src;
     lightbox.style.opacity = 1;
     lightbox.style.pointerEvents = 'auto';
   });
+});
+
+// Close lightbox
+lightbox.addEventListener('click', e => {
+  if (e.target !== img) {
+    lightbox.style.opacity = 0;
+    lightbox.style.pointerEvents = 'none';
+  }
 });
