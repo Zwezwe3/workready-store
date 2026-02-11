@@ -1,51 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr Dee's Collection</title>
-<link rel="stylesheet" href="style.css">
-
-<!-- Facebook Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'YOUR_PIXEL_ID');
-  fbq('track', 'PageView');
-</script>
-
-<!-- TikTok Pixel Code -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
-  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
-  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))} };
-  for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
-  ttq.instance=function(t){var e=ttq;e._i=ttq._i||{},e._i[t]=[];
-  e._i[t]._u="https://analytics.tiktok.com/i18n/pixel/events.js";
-  e._t=e._t||{},e._t[t]=+new Date;
-  ttq.load=function(e,n){
-    var i=document.createElement("script");
-    i.type="text/javascript";i.async=!0;
-    i.src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid="+e+"&lib="+t;
-    var o=document.getElementsByTagName("script")[0];
-    o.parentNode.insertBefore(i,o);
-    var a=ttq._i[n]=ttq._i[n]||[];
-    a.push(["load",e])
-  };
-  return e};
-  ttq.load("YOUR_PIXEL_ID");
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mr Dee's Collection</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Facebook Pixel (placeholder - replace YOUR_PIXEL_ID) -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
+  <!-- TikTok Pixel (placeholder - replace YOUR_PIXEL_ID) -->
+  <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify",
+      "instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+      ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))} };
+      for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+      ttq.instance=function(t){var e=ttq;e._i=ttq._i||{},e._i[t]=[],e._i[t]._u="https://analytics.tiktok.com/i18n/pixel/events.js",e._t=e._t||{},e._t[t]=+new Date,ttq.load=function(e,n){var i=document.createElement("script");i.type="text/javascript",i.async=!0,i.src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid="+e+"&lib="+t;var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(i,o);var a=ttq._i[n]=ttq._i[n]||[];a.push(["load",e])};return e};
+      ttq.load("YOUR_PIXEL_ID");ttq.page();
+    }(window, document, 'ttq');
+  </script>
 </head>
 <body>
 
@@ -63,19 +45,21 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<section>
-  <h2>Welcome</h2>
-  <p>We connect you with trusted suppliers of laptops, sport shoes, and selected Apple iPhones. Products are shipped directly to your location.</p>
+<main>
+  <section>
+    <h2>Welcome</h2>
+    <p>We connect you with trusted suppliers of laptops, sport shoes, and selected Apple iPhones. Products are shipped directly to your location.</p>
 
-  <h3>How It Works</h3>
-  <ol>
-    <li>Choose your product.</li>
-    <li>Send a WhatsApp message with the model name.</li>
-    <li>Receive price and payment details.</li>
-    <li>Make payment.</li>
-    <li>Supplier ships directly to your door.</li>
-  </ol>
-</section>
+    <h3>How it works</h3>
+    <ol>
+      <li>Choose your product.</li>
+      <li>Send a WhatsApp message with the model name.</li>
+      <li>Receive price and payment details.</li>
+      <li>Make payment.</li>
+      <li>Supplier ships to your door.</li>
+    </ol>
+  </section>
+</main>
 
 <footer>
   <p>Contact: 0628952301 | Email: mrdeescollection@gmail.com</p>
