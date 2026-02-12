@@ -2,64 +2,122 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Checkout – WorkReady Store</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr Dee's Collection - Checkout</title>
+
 <style>
-body { margin:0; font-family: Arial,sans-serif; background:#f6f6f6; color:#333; }
-nav { background:#800000; color:#fff; display:flex; justify-content:center; flex-wrap:wrap; padding:12px 0;}
-nav a { color:#fff; text-decoration:none; margin:0 15px; font-weight:bold; }
-nav a:hover { color:#ffeb3b; }
-section { max-width:900px; margin:40px auto; padding:20px; background:#f5e6e6; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.05); }
-section h2 { color:#800000; text-align:center; margin-bottom:20px; }
-#miniCart { background:#800000; color:white; padding:15px; border-radius:10px; text-align:center; font-weight:bold; }
-#miniCart span { text-decoration:underline; cursor:pointer; }
-.whatsapp-btn { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:30px; box-shadow:0 4px 8px rgba(0,0,0,0.2); z-index:1000; transition: transform 0.2s; }
-.whatsapp-btn:hover { transform:scale(1.1); }
-</style>
-</head>
-<body>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="products.html">Laptops</a>
-  <a href="iphones.html">iPhones</a>
-  <a href="shoes.html">Sports Shoes</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="checkout.html">Checkout</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<section>
-  <h2>Checkout</h2>
-  <div id="miniCart">Cart is empty. Click products to add items.</div>
-  <p style="text-align:center; margin-top:20px;">Once your cart is ready, click <strong>Send WhatsApp Order</strong> to place your order.</p>
-</section>
-
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/2762892301" target="_blank" class="whatsapp-btn">&#x2709;</a>
-
-<script>
-let cart = [];
-// Function to simulate cart update
-function updateCart() {
-  const miniCart = document.getElementById('miniCart');
-  if(cart.length===0){
-    miniCart.innerHTML='Cart is empty. Click products to add items.';
-  } else {
-    let msg = 'Hello Mr Dee, I would like to order the following:\n';
-    cart.forEach((item,i)=>{msg+=`${i+1}x ${item.name} - ${item.price}\n`;});
-    miniCart.innerHTML=`Cart: ${cart.length} item(s) | <span id="sendCart">Send WhatsApp Order</span>`;
-    document.getElementById('sendCart').onclick = ()=>{
-      let url = "https://wa.me/2762892301?text=" + encodeURIComponent(msg);
-      window.open(url,'_blank');
-    };
-  }
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  padding: 20px;
 }
 
-// Example: add an item (for testing purposes)
-cart.push({name:'iPhone 14 Pro Max', price:'R22,999'});
-updateCart();
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+button {
+  background: #25D366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Checkout</h1>
+
+  <div id="cartItems"></div>
+  <div class="total" id="cartTotal"></div>
+
+  <input type="text" id="customerName" placeholder="Your Name" required>
+  <input type="text" id="customerPhone" placeholder="Your Phone Number" required>
+
+  <button onclick="sendOrder()">Send Order via WhatsApp</button>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function loadCart() {
+  const cartItemsDiv = document.getElementById("cartItems");
+  const totalDiv = document.getElementById("cartTotal");
+
+  let total = 0;
+  cartItemsDiv.innerHTML = "";
+
+  cart.forEach(item => {
+    total += item.price;
+
+    cartItemsDiv.innerHTML += `
+      <div class="cart-item">
+        <span>${item.name}</span>
+        <span>R${item.price}</span>
+      </div>
+    `;
+  });
+
+  totalDiv.innerText = "Total: R" + total;
+}
+
+function sendOrder() {
+  const name = document.getElementById("customerName").value;
+  const phone = document.getElementById("customerPhone").value;
+
+  if (!name || !phone) {
+    alert("Please enter your details.");
+    return;
+  }
+
+  let message = "New Order:%0A";
+  let total = 0;
+
+  cart.forEach(item => {
+    message += `- ${item.name} (R${item.price})%0A`;
+    total += item.price;
+  });
+
+  message += `%0ATotal: R${total}%0A`;
+  message += `Customer: ${name}%0A`;
+  message += `Phone: ${phone}`;
+
+  // Replace with your WhatsApp number
+  const whatsappNumber = "27XXXXXXXXX";
+
+  window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+}
+
+loadCart();
 </script>
 
 </body>
