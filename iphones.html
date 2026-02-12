@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>iPhones | Mr Dee's Collection</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPhones - Mr Dee's Collection</title>
+<style>
+body { margin:0; font-family: Arial,sans-serif; background:#f6f6f6; color:#333; }
+nav { background:#007bff; color:#fff; display:flex; justify-content:center; padding:12px 0; }
+nav a { color:#fff; text-decoration:none; margin:0 15px; font-weight:bold; }
+nav a:hover { color:#ffeb3b; }
+
+.products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:20px; max-width:1200px; margin:0 auto; }
+.product-link { text-decoration:none; color:inherit; }
+.product { text-align:center; background:#fff; padding:15px; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+.product:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 6px 15px rgba(0,0,0,0.15); cursor:pointer; }
+.product img { width:100%; height:auto; border-radius:5px; }
+.price { color:#007bff; font-weight:bold; }
+section { max-width:900px; margin:40px auto 10px auto; padding:0 20px; }
+section h2 { color:#007bff; }
+a.contact-link { color:#007bff; text-decoration:none; font-weight:bold; }
+a.contact-link:hover { text-decoration:underline; }
+</style>
 </head>
 <body>
 
-<header><h1>iPhones</h1></header>
-
 <nav>
   <a href="index.html">Home</a>
-  <a href="products.html">Products</a>
-  <a href="laptops.html">Laptops</a>
+  <a href="products.html">Laptops</a>
   <a href="iphones.html">iPhones</a>
-  <a href="shoes.html">Sport Shoes</a>
+  <a href="shoes.html">Sports Shoes</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-<main>
-  <section class="products">
+<section>
+  <h2>iPhones</h2>
+</section>
+
+<div class="products-grid">
+  <a href="https://wa.me/27628952301?text=Hello%2C%20I%20want%20to%20order%20iPhone%201" target="_blank" class="product-link">
     <div class="product">
       <img src="https://fones.co.za/wp-content/uploads/2025/03/iphone_14_pro_max_deep_purple-6_1.jpg" alt="iPhone 14 Pro Max">
-      <p><strong>iPhone 14 Pro Max</strong><br>R18,999</p>
-      <a class="btn" href="https://wa.me/27628952301?text=I%20want%20to%20order%20iPhone%2014%20Pro%20Max">Chat on WhatsApp</a>
+      <p><strong>iPhone 1</strong><br>iPhone 14 Pro Max<br><span class="price">R22,999</span></p>
     </div>
-
+  </a>
+  <a href="https://wa.me/27628952301?text=Hello%2C%20I%20want%20to%20order%20iPhone%202" target="_blank" class="product-link">
     <div class="product">
       <img src="https://fones.co.za/wp-content/uploads/2025/11/Apple-iPhone-16-Pro-Natural-Titanium-2.webp" alt="iPhone 16 Pro">
-      <p><strong>iPhone 16 Pro</strong><br>R24,499</p>
-      <a class="btn" href="https://wa.me/27628952301?text=I%20want%20to%20order%20iPhone%2016%20Pro">Chat on WhatsApp</a>
+      <p><strong>iPhone 2</strong><br>iPhone 16 Pro<br><span class="price">R34,499</span></p>
     </div>
-  </section>
-</main>
+  </a>
+</div>
 
-<footer>
-  <p>Contact: 0628952301 | Email: mrdeescollection@gmail.com</p>
-  <p>&copy; 2026 Mr Dee's Collection</p>
-</footer>
+<p>Order via WhatsApp: <a class="contact-link" href="https://wa.me/27628952301" target="_blank">+27 62 895 2301</a> | Email: <a class="contact-link" href="mailto:mrdeecollection@gmail.com">mrdeecollection@gmail.com</a></p>
 
-<script src="script.js"></script>
 </body>
 </html>
