@@ -3,16 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - Mr Dee's Collection</title>
+<title>Mr Dee's Collection - About</title>
 <style>
-body { margin:0; font-family: Arial, sans-serif; background:#f6f6f6; color:#333; }
-nav { background:#007bff; color:#fff; display:flex; justify-content:center; padding:12px 0; }
+body { margin:0; font-family: Arial,sans-serif; background:#f6f6f6; color:#333; }
+nav { background:#800000; color:#fff; display:flex; justify-content:center; padding:12px 0; }
 nav a { color:#fff; text-decoration:none; margin:0 15px; font-weight:bold; }
 nav a:hover { color:#ffeb3b; }
-section { max-width:900px; margin:40px auto; padding:20px; background:#fff; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.05); }
-section h2 { color:#007bff; }
-a.contact-link { color:#007bff; text-decoration:none; font-weight:bold; }
+section { max-width:900px; margin:40px auto; padding:20px; background:#f5e6e6; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.05); }
+section h2 { color:#800000; }
+a.contact-link { color:#800000; text-decoration:none; font-weight:bold; }
 a.contact-link:hover { text-decoration:underline; }
+
+/* Floating WhatsApp button */
+.whatsapp-btn {
+  position:fixed; bottom:20px; right:20px; background:#25D366; 
+  color:white; border-radius:50%; width:60px; height:60px; 
+  display:flex; align-items:center; justify-content:center; 
+  text-decoration:none; font-size:30px; box-shadow:0 4px 8px rgba(0,0,0,0.2); z-index:1000;
+  transition: transform 0.2s;
+}
+.whatsapp-btn:hover { transform:scale(1.1); }
 </style>
 </head>
 <body>
@@ -28,11 +38,21 @@ a.contact-link:hover { text-decoration:underline; }
 
 <section>
   <h2>About Mr Dee's Collection</h2>
-  <p>Mr Dee's Collection partners with trusted local suppliers to bring you quality laptops, Apple iPhones, and branded sports shoes at competitive prices. Our goal is to provide simple, reliable shopping with direct-to-door delivery anywhere in South Africa.</p>
-  <p>We prioritize fast, hassle-free service, and every order comes with the supplier's warranty or guarantee. Contact us anytime via WhatsApp or email for support or inquiries.</p>
-  <p>WhatsApp: <a class="contact-link" href="https://wa.me/27628952301" target="_blank">+27 62 895 2301</a></p>
-  <p>Email: <a class="contact-link" href="mailto:mrdeecollection@gmail.com">mrdeecollection@gmail.com</a></p>
+  <p>Mr Dee's Collection connects you with trusted suppliers of high-quality laptops, Apple iPhones, and branded sports shoes in South Africa. Our mission is to make shopping easy, affordable, and reliable, with products delivered directly to your door.</p>
+
+  <h2>Our Values</h2>
+  <ul>
+    <li>Trust and reliability with every order</li>
+    <li>Affordable pricing for quality products</li>
+    <li>Direct-to-door delivery from trusted suppliers</li>
+    <li>Simple WhatsApp ordering for convenience</li>
+  </ul>
+
+  <p>Contact us anytime via WhatsApp: <a class="contact-link" href="https://wa.me/27628952301" target="_blank">+27 62 895 2301</a> or email: <a class="contact-link" href="mailto:mrdeecollection@gmail.com">mrdeecollection@gmail.com</a></p>
 </section>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/27628952301" target="_blank" class="whatsapp-btn">&#x2709;</a>
 
 </body>
 </html>
