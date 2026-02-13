@@ -3,343 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr Dee's Collection</title>
-
+<title>Mr Dee's Collection - Products</title>
 <style>
 body {
   margin:0;
   font-family: Arial, sans-serif;
-  background:#eef1f5;
+  background:#f5e6e8;
   color:#333;
 }
-
-/* NAV */
 nav {
-  background:#222;
+  background:#800000;
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  padding:12px 0;
 }
 nav a {
-  color:#fff;
+  color:white;
+  padding:12px 18px;
   text-decoration:none;
-  margin:8px 15px;
   font-weight:bold;
 }
-nav a:hover { color:#ffd54f; }
+nav a:hover { background:#a52a2a; }
 
-/* SECTIONS */
-.section {
-  max-width:1100px;
-  margin:30px auto;
-  background:#fff;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-.section-header {
-  background:#3f51b5;
-  color:white;
-  padding:15px;
-  font-size:20px;
-  cursor:pointer;
-}
-.section-content {
-  display:none;
-  padding:20px;
-}
-.section.active .section-content {
-  display:block;
-}
+section { max-width:1200px; margin:40px auto; padding:20px; }
+h2 { color:#800000; text-align:center; margin-bottom:20px; }
 
-/* PRODUCT GRID */
 .products-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
 .product {
-  background:#f9fafc;
-  border-radius:8px;
-  padding:10px;
-  text-align:center;
-  box-shadow:0 3px 8px rgba(0,0,0,0.08);
-  cursor:pointer;
-}
-.product img {
-  width:100%;
-  border-radius:6px;
-}
-.price {
-  color:#e91e63;
-  font-weight:bold;
-}
-
-/* GALLERY */
-.gallery-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-}
-.gallery-grid img {
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:8px;
-}
-
-/* MODAL */
-.modal {
-  display:none;
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.6);
-  justify-content:center;
-  align-items:center;
-  z-index:1000;
-}
-.modal-content {
-  background:#fff;
-  padding:20px;
+  background:white;
   border-radius:10px;
-  max-width:400px;
-  width:90%;
+  box-shadow:0 3px 8px rgba(0,0,0,0.1);
   text-align:center;
-}
-.close {
-  float:right;
-  font-size:22px;
+  padding:10px;
+  transition: transform 0.3s, box-shadow 0.3s;
   cursor:pointer;
 }
+.product:hover {
+  transform:scale(1.05);
+  box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+.product img { width:100%; height:auto; border-radius:5px; }
+.price { color:#800000; font-weight:bold; margin-top:5px; display:block; }
 
-/* CART */
-#miniCart {
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  background:#3f51b5;
+.buy-btn {
+  background:#800000;
   color:white;
   padding:10px 15px;
-  border-radius:8px;
-  font-weight:bold;
+  border:none;
+  border-radius:5px;
+  margin-top:10px;
   cursor:pointer;
 }
+.buy-btn:hover { background:#a30000; }
 
-/* WHATSAPP */
+/* Floating WhatsApp button */
 .whatsapp-btn {
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
   color:white;
+  border-radius:50%;
   width:60px;
   height:60px;
-  border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:28px;
   text-decoration:none;
+  font-size:30px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+.whatsapp-btn:hover { transform:scale(1.1); }
+
+/* Mini Cart */
+#miniCart {
+  position:fixed;
+  bottom:100px;
+  right:20px;
+  background:#800000;
+  color:white;
+  padding:10px 15px;
+  border-radius:8px;
+  z-index:999;
+  cursor:pointer;
+  font-weight:bold;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
 }
 </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-  <a href="#home">Home</a>
-  <a href="#products">Products</a>
-  <a href="#laptops">Laptops</a>
-  <a href="#iphones">iPhones</a>
-  <a href="#jeans">Jeans</a>
-  <a href="#shoes">Sports Shoes</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#checkout">Checkout</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="laptops.html">Laptops</a>
+  <a href="iphones.html">iPhones</a>
+  <a href="shoes.html">Sports Shoes</a>
+  <a href="jeans.html">Jeans</a>
+  <a href="about.html">About</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
-<!-- HOME -->
-<div id="home" class="section active">
-  <div class="section-header">Welcome</div>
-  <div class="section-content">
-    <h3>Mr Dee's Collection</h3>
-    <p>Quality laptops, iPhones, shoes, and fashion items delivered through trusted suppliers.</p>
+<section>
+<h2>Our Products</h2>
+<div class="products-grid">
 
-    <h4>What We Offer</h4>
-    <ul>
-      <li>Laptops for work and study</li>
-      <li>Apple iPhones</li>
-      <li>Sports shoes and boots</li>
-      <li>Premium jeans</li>
-    </ul>
-
-    <h4>Why Choose Us</h4>
-    <ul>
-      <li>Trusted suppliers</li>
-      <li>Direct-to-door delivery</li>
-      <li>Competitive pricing</li>
-      <li>Simple WhatsApp ordering</li>
-    </ul>
-  </div>
+<!-- Laptops -->
+<div class="product" data-name="Lenovo ThinkPad Yoga Touch" data-price="R15,999" data-specs="Lenovo ThinkPad Yoga Touch, 16GB RAM, 512GB SSD" data-image="images/520054024_715766014603873_2695606724436205445_n.jpg">
+  <img src="images/520054024_715766014603873_2695606724436205445_n.jpg" alt="Lenovo ThinkPad Yoga Touch">
+  <p><strong>Lenovo ThinkPad Yoga Touch</strong><br>16GB RAM, 512GB SSD<br><span class="price">R15,999</span></p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="15999.00">
+    <input type="hidden" name="item_name" value="Lenovo ThinkPad Yoga Touch">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
 </div>
 
-<!-- PRODUCTS -->
-<div id="products" class="section">
-  <div class="section-header">Products Overview</div>
-  <div class="section-content">
-    <p>Select a category from the menu to view available items.</p>
-  </div>
+<div class="product" data-name="Asus Laptop Model" data-price="R11,999" data-specs="ASUS Laptop" data-image="https://www.becs.co.uk/wp-content/uploads/images/asus-laptop-KAt.jpeg">
+  <img src="https://www.becs.co.uk/wp-content/uploads/images/asus-laptop-KAt.jpeg" alt="Asus Laptop Model">
+  <p><strong>ASUS Laptop</strong><br>R11,999</p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="11999.00">
+    <input type="hidden" name="item_name" value="Asus Laptop Model">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
 </div>
 
-<!-- LAPTOPS -->
-<div id="laptops" class="section">
-  <div class="section-header">Laptops</div>
-  <div class="section-content products-grid">
-    <div class="product" data-name="HP Core i5" data-price="R9,999" data-specs="8GB RAM, 256GB SSD" data-image="images/hp.jpg">
-      <img src="images/hp.jpg">
-      <p><strong>HP Core i5</strong><br><span class="price">R9,999</span></p>
-    </div>
-  </div>
+<div class="product" data-name="HP Core i5" data-price="R9,999" data-specs="HP Core i5 Laptop, 8GB RAM, 256GB SSD" data-image="images/482073298_614430021404140_4176356738869544844_n.jpg">
+  <img src="images/482073298_614430021404140_4176356738869544844_n.jpg" alt="HP Core i5">
+  <p><strong>HP Core i5</strong><br>8GB RAM, 256GB SSD<br><span class="price">R9,999</span></p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="9999.00">
+    <input type="hidden" name="item_name" value="HP Core i5">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
 </div>
 
-<!-- IPHONES -->
-<div id="iphones" class="section">
-  <div class="section-header">iPhones</div>
-  <div class="section-content products-grid">
-    <div class="product" data-name="iPhone 14 Pro Max" data-price="R25,999" data-specs="128GB" data-image="images/iphone20.jpg">
-      <img src="images/iphone20.jpg">
-      <p><strong>iPhone 14 Pro Max</strong><br><span class="price">R25,999</span></p>
-    </div>
-    <div class="product" data-name="iPhone 15 Pro" data-price="R31,999" data-specs="256GB" data-image="images/iphone21.jpg">
-      <img src="images/iphone21.jpg">
-      <p><strong>iPhone 15 Pro</strong><br><span class="price">R31,999</span></p>
-    </div>
-  </div>
+<div class="product" data-name="MacOS Big Sur" data-price="R34,499" data-specs="Apple MacBook with MacOS Big Sur, 16GB RAM, 512GB SSD" data-image="images/483065346_614042614776214_8801819185534169247_n.jpg">
+  <img src="images/483065346_614042614776214_8801819185534169247_n.jpg" alt="MacOS Big Sur">
+  <p><strong>MacOS Big Sur</strong><br>16GB RAM, 512GB SSD<br><span class="price">R34,499</span></p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="34499.00">
+    <input type="hidden" name="item_name" value="MacOS Big Sur">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
 </div>
 
-<!-- JEANS -->
-<div id="jeans" class="section">
-  <div class="section-header">Jeans</div>
-  <div class="section-content products-grid">
-    <div class="product" data-name="Diesel Jeans" data-price="R1,400" data-specs="Premium denim" data-image="images/diesel.jpg">
-      <img src="images/diesel.jpg">
-      <p><strong>Diesel Jeans</strong><br><span class="price">R1,400</span></p>
-    </div>
-  </div>
+<!-- iPhones -->
+<div class="product" data-name="iPhone 14 Pro Max" data-price="R22,999" data-specs="Premium Apple Smartphone" data-image="https://fones.co.za/wp-content/uploads/2025/03/iphone_14_pro_max_deep_purple-6_1.jpg">
+  <img src="https://fones.co.za/wp-content/uploads/2025/03/iphone_14_pro_max_deep_purple-6_1.jpg" alt="iPhone 14 Pro Max">
+  <p><strong>iPhone 14 Pro Max</strong><br>R22,999</p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="22999.00">
+    <input type="hidden" name="item_name" value="iPhone 14 Pro Max">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
 </div>
 
-<!-- SHOES -->
-<div id="shoes" class="section">
-  <div class="section-header">Sports Shoes</div>
-  <div class="section-content products-grid">
-    <div class="product" data-name="Nike Sports Shoe" data-price="R1,999" data-specs="Nike branded" data-image="images/nike.jpg">
-      <img src="images/nike.jpg">
-      <p><strong>Nike Sports Shoe</strong><br><span class="price">R1,999</span></p>
-    </div>
+<div class="product" data-name="iPhone 16 Pro" data-price="R34,499" data-specs="Premium Apple Smartphone" data-image="https://fones.co.za/wp-content/uploads/2025/11/Apple-iPhone-16-Pro-Natural-Titanium-2.webp">
+  <img src="https://fones.co.za/wp-content/uploads/2025/11/Apple-iPhone-16-Pro-Natural-Titanium-2.webp" alt="iPhone 16 Pro">
+  <p><strong>iPhone 16 Pro</strong><br>R34,499</p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="34499.00">
+    <input type="hidden" name="item_name" value="iPhone 16 Pro">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
+</div>
+   <div class="product">
+    <img src="https://fones.co.za/wp-content/uploads/2025/03/iphone_14_pro_max_deep_purple-6_1.jpg" alt="iPhone 14 Pro Max - Deep Purple">
+    <p><strong>iPhone 1</strong><br>iPhone 14 Pro Max<br><span class="price">R22,999</span></p>
   </div>
+
+  <div class="product">
+    <img src="https://fones.co.za/wp-content/uploads/2025/11/Apple-iPhone-16-Pro-Natural-Titanium-2.webp" alt="iPhone 16 Pro - Natural Titanium">
+    <p><strong>iPhone 2</strong><br>iPhone 16 Pro<br><span class="price">R34,499</span></p>
+  </div>
+
+<!-- Shoes / Boots -->
+<div class="product" data-name="Nike Sports Shoe" data-price="R1,999" data-specs="Nike branded sports shoe" data-image="https://images.pexels.com/photos/6481918/pexels-photo-6481918.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260">
+  <img src="https://images.pexels.com/photos/6481918/pexels-photo-6481918.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="Nike Sports Shoe">
+ 
+  <p><strong>Nike Sports Shoe</strong><br>R1,999</p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="1999.00">
+    <input type="hidden" name="item_name" value="Nike Sports Shoe">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
 </div>
 
-<!-- GALLERY -->
-<div id="gallery" class="section">
-  <div class="section-header">Gallery</div>
-  <div class="section-content gallery-grid">
-    <img src="images/gallery1.jpg">
-    <img src="images/gallery2.jpg">
-    <img src="images/gallery3.jpg">
-  </div>
+<div class="product" data-name="Timberland Boots" data-price="R2,999" data-specs="Timberland waterproof boots" data-image="https://assets.timberland.com/images/t_img/f_auto,h_340,e_sharpen:60,w_340/dpr_2.0/v1719373599/TB1A5RJD231-ALT4/Womens-Stone-Street-6Inch-Waterproof-Platform-Boot.png">
+  <img src="https://assets.timberland.com/images/t_img/f_auto,h_340,e_sharpen:60,w_340/dpr_2.0/v1719373599/TB1A5RJD231-ALT4/Womens-Stone-Street-6Inch-Waterproof-Platform-Boot.png" alt="Timberland Boots">
+ 
+  <p><strong>Timberland Boots</strong><br>R2,999</p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="2999.00">
+    <input type="hidden" name="item_name" value="Timberland Boots">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
 </div>
 
-<!-- CHECKOUT -->
-<div id="checkout" class="section">
-  <div class="section-header">Checkout</div>
-  <div class="section-content">
-    <p>Your order will be sent via WhatsApp.</p>
-    <button onclick="sendCart()">Send Order</button>
-  </div>
+<!-- Jeans -->
+<div class="product" data-name="Ducati Jeans" data-price="R1,400" data-specs="Premium Ducati Denim" data-image="images/491406850_1852484725571682_588279870187893033_n.jpg">
+  <img src="images/491406850_1852484725571682_588279870187893033_n.jpg" alt="Ducati Jeans">
+  <p><strong>Ducati Jeans</strong><br>R1,400</p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="1400.00">
+    <input type="hidden" name="item_name" value="Ducati Jeans">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
 </div>
 
-<!-- ABOUT -->
-<div id="about" class="section">
-  <div class="section-header">About</div>
-  <div class="section-content">
-    <p>Mr Dee's Collection connects customers with trusted suppliers for quality tech and fashion.</p>
-  </div>
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="section">
-  <div class="section-header">Contact</div>
-  <div class="section-content">
-    <p>WhatsApp: <a href="https://wa.me/27628952301">+27 62 895 2301</a></p>
-  </div>
-</div>
-
-<!-- MODAL -->
-<div class="modal" id="productModal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img id="modalImage" style="width:100%">
-    <h3 id="modalName"></h3>
-    <p id="modalSpecs"></p>
-    <p id="modalPrice" class="price"></p>
-    <button id="addCart">Add to Cart</button>
-  </div>
-</div>
-
-<div id="miniCart">Cart: 0</div>
-<a href="https://wa.me/27628952301" class="whatsapp-btn">✉</a>
-
-<script>
-let cart=[];
-
-/* SECTION TOGGLE */
-document.querySelectorAll(".section-header").forEach(header=>{
-  header.addEventListener("click",()=>{
-    header.parentElement.classList.toggle("active");
-  });
-});
-
-/* PRODUCT MODAL */
-let modal=document.getElementById("productModal");
-let modalImage=document.getElementById("modalImage");
-let modalName=document.getElementById("modalName");
-let modalSpecs=document.getElementById("modalSpecs");
-let modalPrice=document.getElementById("modalPrice");
-let addCart=document.getElementById("addCart");
-
-document.querySelectorAll(".product").forEach(p=>{
-  p.onclick=()=>{
-    modal.style.display="flex";
-    modalImage.src=p.dataset.image;
-    modalName.textContent=p.dataset.name;
-    modalSpecs.textContent=p.dataset.specs;
-    modalPrice.textContent=p.dataset.price;
-    addCart.onclick=()=>{
-      cart.push({name:p.dataset.name,price:p.dataset.price});
-      updateCart();
-      modal.style.display="none";
-    }
-  };
-});
-
-document.querySelector(".close").onclick=()=>modal.style.display="none";
-window.onclick=e=>{if(e.target==modal)modal.style.display="none";};
-
-function updateCart(){
-  document.getElementById("miniCart").textContent="Cart: "+cart.length;
-}
-
-function sendCart(){
-  let msg="Hello, I would like to order:\n";
-  cart.forEach((item,i)=>{
-    msg+=`${i+1}. ${item.name} - ${item.price}\n`;
-  });
-  let url="https://wa.me/27628952301?text="+encodeURIComponent(msg);
-  window.open(url,"_blank");
-}
-</script>
-
-</body>
-</html>
+<div class="product" data-name="Replay Jeans" data-price="R1,400" data-specs="Premium Replay Denim" data-image="images/491950339_1852484628905025_1160845635907717103_n.jpg">
+  <img src="images/491950339_1852484628905025_1160845635907717103_n.jpg" alt="Replay Jeans">
+  <p><strong>Replay Jeans</strong><br>R1,400</p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="
