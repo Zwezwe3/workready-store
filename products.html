@@ -3,8 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products - Mr Dee's Collection</title>
-<link rel="stylesheet" href="style.css">
+<title>Mr Dee's Collection - Products</title>
+<style>
+body { margin:0; font-family: Arial, sans-serif; background:#f5e6e8; color:#333; }
+nav { background:#800000; display:flex; justify-content:center; flex-wrap:wrap; }
+nav a { color:white; padding:12px 18px; text-decoration:none; font-weight:bold; }
+nav a:hover { background:#a52a2a; }
+section { max-width:1200px; margin:40px auto; padding:20px; }
+h2 { color:#800000; text-align:center; margin-bottom:20px; }
+.products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+.product { background:white; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,0.1); text-align:center; padding:10px; transition: transform 0.3s, box-shadow 0.3s; }
+.product:hover { transform:scale(1.05); box-shadow:0 6px 15px rgba(0,0,0,0.15); }
+.product img { width:100%; height:auto; border-radius:5px; }
+.price { color:#800000; font-weight:bold; margin-top:5px; display:block; }
+.buy-btn, .add-cart-btn { padding:10px 15px; border:none; border-radius:5px; cursor:pointer; margin-top:5px; }
+.buy-btn { background:#800000; color:white; }
+.buy-btn:hover { background:#a30000; }
+.add-cart-btn { background:#ff9800; color:white; }
+.add-cart-btn:hover { background:#e68900; }
+.whatsapp-btn { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:30px; box-shadow:0 4px 8px rgba(0,0,0,0.2); transition: transform 0.2s; }
+.whatsapp-btn:hover { transform:scale(1.1); }
+#miniCart { position:fixed; bottom:100px; right:20px; background:#800000; color:white; padding:10px 15px; border-radius:8px; z-index:999; cursor:pointer; font-weight:bold; box-shadow:0 4px 8px rgba(0,0,0,0.2); }
+</style>
 </head>
 <body>
 
@@ -15,44 +35,121 @@
   <a href="iphones.html">iPhones</a>
   <a href="shoes.html">Sports Shoes</a>
   <a href="jeans.html">Jeans</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="checkout.html">Checkout</a>
   <a href="about.html">About</a>
+  <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact</a>
 </nav>
 
 <section>
-<h2>All Products</h2>
-
+<h2>Our Products</h2>
 <div class="products-grid">
 
-<div class="product">
-  <img src="images/520054024_715766014603873_2695606724436205445_n.jpg">
-  <h3>Lenovo ThinkPad Yoga</h3>
-  <p class="price">R15,999</p>
-  <button class="buy-btn">Buy Now</button>
+<!-- Laptops -->
+<div class="product" data-name="Lenovo ThinkPad Yoga" data-price="R15,999">
+  <img src="520054024_715766014603873_2695606724436205445_n.jpg" alt="Lenovo ThinkPad Yoga">
+  <p><strong>Lenovo ThinkPad Yoga</strong><br>Intel i7, 16GB RAM, 512GB SSD<br><span class="price">R15,999</span></p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="15999.00">
+    <input type="hidden" name="item_name" value="Lenovo ThinkPad Yoga">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
+  <button class="add-cart-btn">Add to Cart</button>
 </div>
 
-<div class="product">
-  <img src="images/iphone20.jpg">
-  <h3>iPhone</h3>
-  <p class="price">From R22,999</p>
-  <button class="buy-btn">Buy Now</button>
+<div class="product" data-name="Asus Laptop" data-price="R12,499">
+  <img src="481942540_614430458070763_4143823787333632966_n.jpg" alt="Asus Laptop">
+  <p><strong>Asus Laptop</strong><br>Intel i5, 8GB RAM, 256GB SSD<br><span class="price">R12,499</span></p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="12499.00">
+    <input type="hidden" name="item_name" value="Asus Laptop">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
+  <button class="add-cart-btn">Add to Cart</button>
 </div>
 
-<div class="product">
-  <img src="images/491406850_1852484725571682_588279870187893033_n.jpg">
-  <h3>Ducati Jeans</h3>
-  <p class="price">R1,400</p>
-  <button class="buy-btn">Buy Now</button>
+<!-- iPhones -->
+<div class="product" data-name="iPhone 14 Pro Max" data-price="R22,999">
+  <img src="491736509_1852484418905046_8802287681723526745_n.jpg" alt="iPhone 14 Pro Max">
+  <p><strong>iPhone 14 Pro Max</strong><br>256GB Storage<br><span class="price">R22,999</span></p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="22999.00">
+    <input type="hidden" name="item_name" value="iPhone 14 Pro Max">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
+  <button class="add-cart-btn">Add to Cart</button>
+</div>
+
+<!-- Sports Shoes -->
+<div class="product" data-name="Nike Sports Shoe" data-price="R1,999">
+  <img src="491950339_1852484628905025_1160845635907717103_n.jpg" alt="Nike Sports Shoe">
+  <p><strong>Nike Sports Shoe</strong><br>Sizes 6-11<br><span class="price">R1,999</span></p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="1999.00">
+    <input type="hidden" name="item_name" value="Nike Sports Shoe">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
+  <button class="add-cart-btn">Add to Cart</button>
+</div>
+
+<!-- Jeans -->
+<div class="product" data-name="Ducati Jeans" data-price="R1,400">
+  <img src="491406850_1852484725571682_588279870187893033_n.jpg" alt="Ducati Jeans">
+  <p><strong>Ducati Jeans</strong><br>R1,400</p>
+  <form action="https://www.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+    <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+    <input type="hidden" name="amount" value="1400.00">
+    <input type="hidden" name="item_name" value="Ducati Jeans">
+    <input type="submit" class="buy-btn" value="Buy Now">
+  </form>
+  <button class="add-cart-btn">Add to Cart</button>
 </div>
 
 </div>
 </section>
 
-<footer>
-© 2026 Mr Dee's Collection
-</footer>
+<div id="miniCart">Cart: 0 items | <span id="sendCart">Send WhatsApp Order</span></div>
+<a href="https://wa.me/27628952301" target="_blank" class="whatsapp-btn">&#x2709;</a>
+
+<script>
+let cart = [];
+
+// Add to Cart buttons
+document.querySelectorAll(".add-cart-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const product = btn.closest(".product");
+    cart.push({ name: product.dataset.name, price: product.dataset.price });
+    updateCart();
+  });
+});
+
+// Buy Now buttons (optional PayFast submit)
+document.querySelectorAll(".buy-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    // form submits normally
+  });
+});
+
+function updateCart() {
+  const cartDiv = document.getElementById("miniCart");
+  cartDiv.innerHTML = `Cart: ${cart.length} item(s) | <span id="sendCart">Send WhatsApp Order</span>`;
+  document.getElementById("sendCart").onclick = () => {
+    let msg = "Hello Mr Dee, I would like to order the following:\n";
+    cart.forEach((item, i) => {
+      msg += `${i+1}x ${item.name} - ${item.price}\n`;
+    });
+    window.open("https://wa.me/27628952301?text=" + encodeURIComponent(msg), "_blank");
+  };
+}
+</script>
 
 </body>
 </html>
