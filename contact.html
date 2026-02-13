@@ -4,27 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mr Dee's Collection - Contact</title>
-<style>
-body { margin:0; font-family: Arial,sans-serif; background:#f6f6f6; color:#333; }
-nav { background:#800000; color:#fff; display:flex; justify-content:center; padding:12px 0; }
-nav a { color:#fff; text-decoration:none; margin:0 15px; font-weight:bold; }
-nav a:hover { color:#ffeb3b; }
-section { max-width:900px; margin:40px auto; padding:20px; background:#f5e6e6; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.05); }
-section h2 { color:#800000; }
-a.contact-link { color:#800000; text-decoration:none; font-weight:bold; }
-a.contact-link:hover { text-decoration:underline; }
-
-/* Floating WhatsApp button */
-.whatsapp-btn {
-  position:fixed; bottom:20px; right:20px; background:#25D366; 
-  color:white; border-radius:50%; width:60px; height:60px; 
-  display:flex; align-items:center; justify-content:center; 
-  text-decoration:none; font-size:30px; box-shadow:0 4px 8px rgba(0,0,0,0.2); z-index:1000;
-  transition: transform 0.2s;
-}
-.whatsapp-btn:hover { transform:scale(1.1); }
-</style>
- <link rel="stylesheet" href="style.css"> 
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -33,21 +13,28 @@ a.contact-link:hover { text-decoration:underline; }
   <a href="products.html">Laptops</a>
   <a href="iphones.html">iPhones</a>
   <a href="shoes.html">Sports Shoes</a>
+  <a href="jeans.html">Jeans</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-<section>
+<section class="contact-section">
   <h2>Contact Mr Dee's Collection</h2>
-  <p>If you have questions, want to place an order, or need assistance, reach out to us via WhatsApp or email.</p>
+  <p>Have questions, want to place an order, or need assistance? Reach out to us via WhatsApp or email. We’re ready to help!</p>
 
-  <ul>
-    <li>WhatsApp: <a class="contact-link" href="https://wa.me/27628952301" target="_blank">+27 62 895 2301</a></li>
-    <li>Email: <a class="contact-link" href="mailto:mrdeecollection@gmail.com">mrdeecollection@gmail.com</a></li>
-  </ul>
+  <div class="contact-info">
+    <div>
+      <h3>WhatsApp</h3>
+      <p><a class="contact-link" href="https://wa.me/27628952301" target="_blank">+27 62 895 2301</a></p>
+    </div>
+    <div>
+      <h3>Email</h3>
+      <p><a class="contact-link" href="mailto:mrdeecollection@gmail.com">mrdeecollection@gmail.com</a></p>
+    </div>
+  </div>
 
   <h2>Ordering via WhatsApp</h2>
-  <p>Click the floating WhatsApp button or use the number above to send your order. Include the product names and quantities.</p>
+  <p>Click the floating WhatsApp button or use the number above to send your order. Include the product names and quantities, and we’ll get back to you promptly.</p>
 </section>
 
 <!-- Floating WhatsApp Button -->
